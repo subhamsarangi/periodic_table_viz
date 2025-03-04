@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Periodic Table</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}" />
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', path='/script.js') }}"></script>
+</head>
+<body>
+  <div class="container1 mt-4">
+    <h1 class="display-4 text-center mb-4">Interactive Periodic Table</h1>
+    <div id="error-message" class="text-danger mb-2"></div>
+    <div id="search-container" class="mb-4">
+      <div class="form-row">
+        <div class="col-md-3 mb-2">
+          <input type="text" id="search-input" class="form-control" placeholder="Search by name or symbol">
+        </div>
+        <div class="col-md-2 mb-2">
+          <select id="group-filter" class="form-control">
+            <option value="">All Groups</option>
+          </select>
+        </div>
+        <div class="col-md-2 mb-2">
+          <select id="period-filter" class="form-control">
+            <option value="">All Periods</option>
+          </select>
+        </div>
+        <div class="col-md-2 mb-2">
+          <button id="search-btn" class="btn btn-primary btn-block">Search</button>
+        </div>
+        <div class="col-md-3 mb-2">
+          <button id="clear-btn" class="btn btn-secondary btn-block">Clear Filters</button>
+        </div>
+      </div>
+    </div>
+    <div id="table-container" class="mb-4"></div>
+  </div>
+</body>
+</html>

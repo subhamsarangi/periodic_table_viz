@@ -1,0 +1,63 @@
+body {
+  background: #222;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container1{
+  margin: 2em;
+}
+h1 {
+  color: #fff;
+  text-shadow: 1px 1px 2px #aaa;
+}
+
+#table-container {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 5px;
+  margin: 5px auto;
+}
+
+.element {
+  background: linear-gradient(45deg, #313765, #232534);
+  border: 1px solid #979f6a;
+  color: #ffffff;
+  font-family: monospace;
+  padding: 10px;
+  margin: 2px;
+  position: relative;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+  transition: border 0.3sease;
+}
+
+.element.skeleton {
+  background: #393939;
+  color: #777;
+  border: 1px dashed #999;
+}
+
+/* Custom tooltip styling (renamed to avoid Bootstrap conflicts) */
+.element-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #000, #222);
+  color: #fff;
+  padding: 12px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 2px solid #a1a7fc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  z-index: 10;
+}
