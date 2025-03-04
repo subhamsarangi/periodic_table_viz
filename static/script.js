@@ -28,10 +28,10 @@ $(document).ready(function () {
       let matchesPeriod = !periodFilter || cellPeriod === periodFilter;
 
       if (matchesQuery && matchesGroup && matchesPeriod) {
-        $(this).css('border', '2px solid red');
+        $(this).css('opacity', '1');
         this.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        $(this).css('border', '1px solid #00796b');
+        $(this).css('opacity', '0.2');
       }
     });
   });
@@ -41,7 +41,7 @@ $(document).ready(function () {
     $('#search-input').val('');
     $('#group-filter').val('');
     $('#period-filter').val('');
-    $('.element').css('border', '1px solid #00796b');
+    $('.element').css('opacity', '1');
     $('#table-container')[0].scrollIntoView({ behavior: 'smooth' });
   });
 

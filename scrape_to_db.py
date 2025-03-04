@@ -30,19 +30,31 @@ rows = table.find_all("tr")[1:]  # Skip header row
 elements = []
 for row in rows:
     cols = row.find_all("td")
-    if len(cols) < 8:
-        continue  # Skip incomplete rows
+    if len(cols) < 16:  # Ensure the row has all expected columns
+        continue
 
     element_data = {
         "atomic_number": int(cols[0].text.strip()),
         "symbol": cols[1].text.strip(),
         "name": cols[2].text.strip(),
-        "atomic_mass": cols[3].text.strip(),
-        "density": cols[5].text.strip() if cols[5].text.strip() else None,
-        "melting_point": cols[6].text.strip() if cols[6].text.strip() else None,
-        "boiling_point": cols[7].text.strip() if cols[7].text.strip() else None,
+        "name_origin": cols[3].text.strip(),
+        "group": cols[4].text.strip(),
+        "period": cols[5].text.strip(),
+        "block": cols[6].text.strip(),
+        "atomic_weight": cols[7].text.strip(),
+        "density": cols[8].text.strip() if cols[8].text.strip() else None,
+        "melting_point": cols[9].text.strip() if cols[9].text.strip() else None,
+        "boiling_point": cols[10].text.strip() if cols[10].text.strip() else None,
+        "specific_heat_capacity": (
+            cols[11].text.strip() if cols[11].text.strip() else None
+        ),
+        "electronegativity": cols[12].text.strip() if cols[12].text.strip() else None,
+        "abundance": cols[13].text.strip() if cols[13].text.strip() else None,
+        "origin": cols[14].text.strip(),
+        "phase": cols[15].text.strip(),
     }
     elements.append(element_data)
+
 
 # Insert elements into MongoDB
 elements_collection.delete_many({})  # Clear existing data

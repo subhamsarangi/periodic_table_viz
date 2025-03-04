@@ -2,7 +2,7 @@ body {
   background: #222;
   margin: 0;
   padding: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container1{
@@ -21,9 +21,10 @@ h1 {
 }
 
 .element {
-  background: linear-gradient(45deg, #313765, #232534);
-  border: 1px solid #979f6a;
-  color: #ffffff;
+  font-family: 'Source Code Pro', monospace;
+  background: linear-gradient(45deg, #090b1a, #232534);
+  border: 1px solid #225e8e;
+  color: #d2ebff;
   font-family: monospace;
   padding: 10px;
   margin: 2px;
@@ -35,7 +36,8 @@ h1 {
   font-size: 16px;
   text-align: center;
   border-radius: 4px;
-  transition: border 0.3sease;
+  transition: border 0.3s ease;
+  cursor: pointer;
 }
 
 .element.skeleton {
@@ -56,7 +58,7 @@ h1 {
   padding: 12px 14px;
   font-size: 13px;
   border-radius: 8px;
-  border: 2px solid #a1a7fc;
+  border: 2px solid #225e8e;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   z-index: 10;
