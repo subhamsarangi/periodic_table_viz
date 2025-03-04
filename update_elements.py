@@ -133,9 +133,10 @@ def main():
     load_dotenv()
 
     # 3. Build the Mongo URI
-    username = urllib.parse.quote_plus(os.getenv("MONGO_USER", "admin"))
-    password = urllib.parse.quote_plus(os.getenv("MONGO_PASS", "pwd"))
-    mongo_uri = f"mongodb+srv://{username}:{password}@periodic.1yeg8.mongodb.net/?retryWrites=true&w=majority&appName=periodic"
+    username = urllib.parse.quote_plus(os.getenv("MONGO_USER"))
+    password = urllib.parse.quote_plus(os.getenv("MONGO_PASS"))
+    MONGO_HOST = urllib.parse.quote_plus(os.getenv("MONGO_HOST"))
+    mongo_uri = f"mongodb+srv://{username}:{password}@{MONGO_HOST}/?retryWrites=true&w=majority&appName=periodic"
 
     # 4. Connect to MongoDB
     client = MongoClient(mongo_uri)

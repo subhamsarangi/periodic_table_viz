@@ -11,7 +11,8 @@ load_dotenv()
 # MongoDB Connection Setup
 username = urllib.parse.quote_plus(os.getenv("MONGO_USER"))
 password = urllib.parse.quote_plus(os.getenv("MONGO_PASS"))
-mongo_uri = f"mongodb+srv://{username}:{password}@periodic.1yeg8.mongodb.net/?retryWrites=true&w=majority&appName=periodic"
+MONGO_HOST = urllib.parse.quote_plus(os.getenv("MONGO_HOST"))
+mongo_uri = f"mongodb+srv://{username}:{password}@{MONGO_HOST}/?retryWrites=true&w=majority&appName=periodic"
 
 client = MongoClient(mongo_uri)
 db = client["periodic_table"]
